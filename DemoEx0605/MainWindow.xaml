@@ -1,0 +1,56 @@
+﻿<Window x:Class="DemoEx0605.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEx0605"
+        xmlns:vm="clr-namespace:DemoEx0605.ViewModels"
+        mc:Ignorable="d"
+        Title="Партнеры" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Images/Мастер пол.png" Margin="10"/>
+            <TextBlock Text="Список партнеров" VerticalAlignment="Center" FontSize="18"/>
+            <Button Background="#67BA80" Margin="435,5,5,5" HorizontalAlignment="Right">
+                <Button.Content>
+                    <TextBlock Text="Добавить партнера" FontSize="14" Foreground="White" Margin="5"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <ListView ItemsSource="{Binding Partners}" Grid.Row="1" Name="ListPartners" HorizontalContentAlignment="Stretch" SelectionChanged="ListPartners_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Background="#F4E8D3" Padding="10" Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <TextBlock FontSize="18">
+                                    <Run Text="{Binding TypePartner, Mode=OneWay}"/>
+                                    <Run Text="|"/>
+                                    <Run Text="{Binding NamePartner, Mode=OneWay}"/>
+                                </TextBlock>
+                                <TextBlock Text="{Binding Director,Mode=OneWay}" FontSize="14"/>
+                                <TextBlock Text="{Binding Phone,Mode=OneWay}" FontSize="14"/>
+                                <TextBlock  FontSize="14">
+                                    <Run Text="Рейтинг: "/>
+                                    <Run Text="{Binding Rating,Mode=OneWay}"/>
+                                </TextBlock>
+                            </StackPanel>
+                            <TextBlock Grid.Column="1" Text="{Binding DiscountText, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

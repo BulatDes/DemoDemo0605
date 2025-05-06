@@ -1,0 +1,54 @@
+﻿<Window x:Class="DemoEx0605.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEx0605"
+        mc:Ignorable="d"
+        Title="Редактирование партнера" Height="650" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Images/Мастер пол.png" Margin="10"/>
+            <TextBlock Text="Редактирование партнеров" VerticalAlignment="Center" FontSize="18"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBlock Text="Название партнера" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="NamePartnerTB"></TextBox>
+            
+            <TextBlock Text="Адрес партнера" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="AddressPartnerTB"></TextBox>
+            
+            <TextBlock Text="ФИО Директора" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="DirectorTB"></TextBox>
+            
+            <TextBlock Text="Телефон" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="PhonePartnerTB"></TextBox>
+            
+            <TextBlock Text="Электронная почта" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="EmailPartnerTB"></TextBox>
+            
+            <TextBlock Text="Рейтинг" Margin="10" FontSize="14"/>
+            <TextBox Margin="10,0,10,0" x:Name="RatingPartnerTB"></TextBox>
+
+            <TextBlock Text="Тип партнера" Margin="10" FontSize="14"/>
+            <ComboBox Margin="10,0,10,0" x:Name="typePartnerCB"></ComboBox>
+
+            <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Bottom">
+                <Button Margin="5,5,5,5"  Width="100" Name="SaveBut" Click="SaveBut_Click">
+                    <Button.Content>
+                        <TextBlock Text="Сохранить" FontSize="14" Foreground="White" Margin="5"/>
+                    </Button.Content>
+                </Button>
+                <Button  Margin="570,5,5,5" Width="100">
+                    <Button.Content>
+                        <TextBlock Text="Назад" FontSize="14" Foreground="White" Margin="5"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Application x:Class="DemoEx0605.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DemoEx0605"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#F4E8D3"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#67BA80"/>
+        </Style>
+    </Application.Resources>
+</Application>
